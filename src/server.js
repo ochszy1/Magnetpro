@@ -54,9 +54,9 @@ app.get('/', (req, res) => {
 });
 
 // API routes
-const analyzeRoutes = require('./routes/analyze');
-const emailRoutes = require('./routes/email');
-const benchmarkRoutes = require('./routes/benchmarks');
+const analyzeRoutes = require('../routes/analyze');
+const emailRoutes = require('../routes/email');
+const benchmarkRoutes = require('../routes/benchmarks');
 
 app.use('/api/analyze', analyzeRoutes);
 app.use('/api/email', emailRoutes);
