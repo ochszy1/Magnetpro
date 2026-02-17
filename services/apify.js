@@ -105,10 +105,13 @@ function calculateEngagementMetrics(profile) {
         const daysDiff = (posts[0].timestamp - posts[posts.length - 1].timestamp) / (1000 * 60 * 60 * 24);
         if (daysDiff > 0) {
             postFrequency = ((posts.length / daysDiff) * 7).toFixed(1);
+        } else {
+            // Timestamps exist but same day, estimate 5/week
+            postFrequency = 5.0;
         }
     } else {
-        // Rough estimate: assume active accounts post 3-7x per week
-        postFrequency = (Math.random() * 4 + 3).toFixed(1);
+        // No timestamps - estimate based on typical activity: 4-6 posts/week
+        postFrequency = 5.0;
     }
 
     return {
