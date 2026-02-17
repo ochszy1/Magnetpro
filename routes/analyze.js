@@ -120,17 +120,17 @@ router.post('/', async (req, res) => {
                 username: profile.username,
                 fullName: profile.full_name,
                 profilePicUrl: profile.profile_pic_url,
-                followers: profile.followers,
-                following: profile.following,
-                posts: profile.posts,
+                followers: parseInt(profile.followers),
+                following: parseInt(profile.following),
+                posts: parseInt(profile.posts),
                 engagementRate: parseFloat(profile.engagement_rate),
-                avgLikes: profile.avg_likes,
-                avgComments: profile.avg_comments,
+                avgLikes: parseInt(profile.avg_likes),
+                avgComments: parseInt(profile.avg_comments),
                 verified: profile.verified,
                 biography: profile.biography,
                 externalUrl: profile.external_url,
                 postFrequency: parseFloat(profile.post_frequency || 0),
-                reelPercentage: profile.reel_percentage
+                reelPercentage: parseInt(profile.reel_percentage || 0)
             },
             score: {
                 overall: overallScore,
