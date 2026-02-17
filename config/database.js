@@ -19,7 +19,7 @@ pool.on('connect', () => {
 
 pool.on('error', (err) => {
     console.error('Unexpected PostgreSQL error:', err);
-    process.exit(-1);
+    // Don't exit - let the app continue running
 });
 
 // Query helper
